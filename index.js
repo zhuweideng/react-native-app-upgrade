@@ -104,7 +104,7 @@ export const downloadApk = async ({
     // }
     const downloadTask = await RNFetchBlob
         .config({ path: apkFilePath })
-        .fetch('GET', apkUrl)
+        .fetch('GET', apkUrl,{'User-Agent': 'Android 8.0; Pixel 2 Build/OPD3.170816.012'})
         .progress({ interval }, (received, total) => {
             callback?.onProgress(getFilesize(received), getFilesize(total), parseInt((received / total * 100)));
         })
