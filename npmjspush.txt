@@ -1,0 +1,30 @@
+第四步：准备npm registry账户
+创建/登陆npm registry账户
+$ npm adduser
+来新增一个用户，或者你已经在官网注册了一个用户，可以通过：
+
+$ npm login
+来登陆npm registry账户
+2. 这里后续可能出现404的报错
+解决方案是：在官网重新注册，或者用命令行在重新注册用户（这里可能出现密码不正确等问题，要提前记好密码奥！）
+3. 查看当前登录状态
+
+$ npm whoami
+第五步：发布
+命令行进入要发布的路径
+$ cd 项目路径
+首次发布代码
+$ npm publish
+注意：只需要上传上面箭头提到几个文件即可
+
+更新发布代码
+首先要更改package.json中的版本号，再次上传到github，之后要打个相应的tag。再执行上面首次发布代码的命令即可。
+
+
+NRM使用
+nrm ls：查看当前可选源，带*是当前使用的源
+nrm current：查看当前源
+nrm use <registry>:切换源，registry为源名称
+nrm add <registry> <url>:添加源，registry为源名称，url为源地址
+nrm del <registry>：删除源
+nrm test <registry>：测试源的响应时间

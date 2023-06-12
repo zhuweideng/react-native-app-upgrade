@@ -2,7 +2,8 @@ import {
     Platform,
     NativeModules,
 } from 'react-native';
-import RNFetchBlob from 'rn-fetch-blob';
+// import RNFetchBlob from 'rn-fetch-blob';
+import ReactNativeBlobUtil from 'react-native-blob-util'
 
 const RNUpgrade = NativeModules.upgrade;
 const ANDROID_PLATFORM = Platform.OS === 'android';
@@ -102,7 +103,7 @@ export const downloadApk = async ({
     //     RNUpgrade.installApk(downloadApkFilePath);
     //     return;
     // }
-    const downloadTask = await RNFetchBlob
+    const downloadTask = await ReactNativeBlobUtil
         .config({ path: apkFilePath })
         .fetch('GET', apkUrl,{'User-Agent': 'Android 8.0; Pixel 2 Build/OPD3.170816.012'})
         .progress({ interval }, (received, total) => {
@@ -123,6 +124,6 @@ export const downloadApk = async ({
  * @param apkFilePath 下载的apk文件路径
  */
 const checkApkFileExist = async (apkFilePath) => {
-    return await RNFetchBlob.fs.exists(apkFilePath);
+    return await ReactNativeBlobUtil.fs.exists(apkFilePath);
 }
 
