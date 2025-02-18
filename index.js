@@ -127,3 +127,14 @@ const checkApkFileExist = async (apkFilePath) => {
     return await ReactNativeBlobUtil.fs.exists(apkFilePath);
 }
 
+export const newCheckFileExist = async () =>{
+    const apkFilePath = RNUpgrade.downloadApkFilePath;
+    const apkFileExist = await checkApkFileExist(apkFilePath);
+    return apkFileExist
+}
+
+export const newInstallApk = async () =>{
+    const apkFilePath = RNUpgrade.downloadApkFilePath;
+    const apkFileExist = await checkApkFileExist(apkFilePath);
+    apkFileExist && RNUpgrade.installApk(apkFilePath);
+}
