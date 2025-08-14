@@ -65,3 +65,21 @@ iOS
 
 
 > [react-native-blob-util](https://github.com/RonRadtke/react-native-blob-util)
+
+
+> 添加 tag
+
+```
+比如：我现在给当前代码，提交tag:v2.2.0
+ 
+# 本地修改
+git tag -a 2.2.0 -m "2.2.0"
+ 
+git push origin master
+ 
+ 
+# 提交远端
+git push origin --tag
+ 
+# 成功，登录github查看即可
+```
